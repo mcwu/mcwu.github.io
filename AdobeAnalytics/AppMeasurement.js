@@ -39,7 +39,7 @@ made when instructed to do so by your account manager.*/
 
 // copy and paste implementation plug-ins here - See "Implementation Plug-ins" @
 // https://marketing.adobe.com/resources/help/en_US/sc/implement/#Implementation_Plugins
-// Plug-ins can then be used in the s_doPlugins(s) function above 
+// Plug-ins can then be used in the s_doPlugins(s) function above
 
 /****************************** MODULES *****************************/
 
@@ -47,7 +47,7 @@ made when instructed to do so by your account manager.*/
 // AppMeasurement_Module_Media.js - Media Module, included in AppMeasurement zip
 // AppMeasurement_Module_Integrate.js - Integrate Module, included in AppMeasurement zip
 
-/* ============== DO NOT ALTER ANYTHING BELOW THIS LINE ! =============== 
+/* ============== DO NOT ALTER ANYTHING BELOW THIS LINE ! ===============
 /*
  Start ActivityMap Module
 
