@@ -1,14 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <head>
-  <script language="javascript" type="text/javascript" src="./AdobeAnalytics/VisitorAPI.js"></script>
-  <script language="javascript" type="text/javascript" src="./AdobeAnalytics/AppMeasurement.js"></script>
-  </head>
 
-  <body>
-    this is my AdobeAnalytics Page.  boo yah
+<head>
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Adobe Analytics -->
+  <script src="./AdobeAnalytics/VisitorAPI.js"></script>
+  <script src="./AdobeAnalytics/AppMeasurement.js"></script>
 
-    putting SI script tag on page.  addition made. another one. please fucking work. this sucks.
+  <!-- Site Intercept -->
     <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
     <script type='text/javascript'>
     (function(){var g=function(e,h,f,g){
@@ -21,6 +21,15 @@
     </script><div id='SI_6VAH8Y46Sk7XsDX'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
     <!--END WEBSITE FEEDBACK SNIPPET-->
 
-  </body>
+  <!-- App -->
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <p>Hello buyer. Fuck me now</p>
+
+  <button type="button" onclick="showAdobeData()">Show Adobe Data</button>
+  <button type="button" onclick="register()">Register</button>
+</body>
 
 </html>
