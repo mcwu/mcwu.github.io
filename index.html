@@ -1,20 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120063850-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-120063850-1');
+<head>
+  <link rel="stylesheet" href="style.css">
 
-    </script>
+  <!-- Adobe Analytics -->
+  <script src="VisitorAPI.js"></script>
+  <script src="AppMeasurement.js"></script>
 
-  </head>
-  <body>
-
-
+  <!-- Site Intercept -->
     <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
     <script type='text/javascript'>
     (function(){var g=function(e,h,f,g){
@@ -23,13 +17,19 @@
     this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
     this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
     this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
-    try{(new g(100,"r","QSI_S_SI_6FQp0qlTPrtsZRr","https://zn0pumkdzlrmwvu9f-qcorp.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_6FQp0qlTPrtsZRr&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
-    </script><div id='SI_6FQp0qlTPrtsZRr'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
-    <!--END WEBSITE FEEDBACK SNIPPET--> 
-    mwu simple page </br>
-    has google analytics tag</br>
-    <span onclick="window._qsie = window._qsie || []; window._qsie.push('wumarevent');">event trigger point</span>
-    
-  </body>
+    try{(new g(100,"r","QSI_S_SI_6VAH8Y46Sk7XsDX","https://zn9zspeg3axs68xlt-qcorpaz1.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_6VAH8Y46Sk7XsDX&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+    </script><div id='SI_6VAH8Y46Sk7XsDX'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+    <!--END WEBSITE FEEDBACK SNIPPET-->
+
+  <!-- App -->
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <p>Hello buyer. Fuck me sideways. index.html</p>
+
+  <button type="button" onclick="showAdobeData()">Show Adobe Data</button>
+  <button type="button" onclick="register()">Register</button>
+</body>
 
 </html>
