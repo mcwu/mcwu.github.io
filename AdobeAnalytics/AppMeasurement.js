@@ -32,7 +32,7 @@ s.doPlugins=s_doPlugins */
 /* WARNING: Changing any of the below variables will cause drastic
 changes to how your visitor data is collected.  Changes should only be
 made when instructed to do so by your account manager.*/
-//s.trackingServer="INSERT-TRACKING-SERVER-HERE"
+s.trackingServer="qualmwutest.sc.omtrdc.net"
 //s.trackingServerSecure="INSERT-SECURE-TRACKING-SERVER-HERE"
 
 /************************** PLUGINS SECTION *************************/
