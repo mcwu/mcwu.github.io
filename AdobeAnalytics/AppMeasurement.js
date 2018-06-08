@@ -1,5 +1,5 @@
 //initialize AppMeasurement
-var s_account="QUALMWUTEST"
+var s_account="qualsachintest2"
 var s=s_gi(s_account)
 
 /******** VISITOR ID SERVICE CONFIG - REQUIRES VisitorAPI.js ********/
