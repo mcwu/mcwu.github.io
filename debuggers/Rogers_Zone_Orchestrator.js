@@ -1,5 +1,4 @@
 try {
-  console.log('Using Debug Version of Rogers Zone Orchestrator');
   if (window.QSI === undefined) window.QSI = {};
   if (QSI.reg === undefined) QSI.reg = {};
   if (QSI.ed === undefined) QSI.ed = {};
@@ -2551,10 +2550,15 @@ if(QSI.util === undefined) {
       // This return does nothing for the code, but makes it testable
       return window.addEventListener("message", function(event) {
         try {
-          console.log('======START MESSAGE LISTENER in setupScreenCaptureListener========');
+          console.log('======QSI START MESSAGE LISTENER in setupScreenCaptureListener========');
+          console.log('    message received at: ' + Date.now());
+          console.log('    event.origin is:' + event.origin);
           if (QSI.Orchestrator && QSI.Orchestrator.isMessageEventOriginAllowed && !QSI.Orchestrator.isMessageEventOriginAllowed(event.origin)) {
+            console.log('        event.origin is NOT allowed');
             return;
           }
+            console.log('        event.origin is allowed');
+
           // gets the intercept that contains the embedded target that the message originated from
           var intercept = QSI.util.getOriginInterceptOfMessage(event.source);
 
@@ -2563,21 +2567,28 @@ if(QSI.util === undefined) {
           // We won't post screen capture data back  to a source unless it's the embedded target
           // of one of the registered intercepts on the page
           if (!intercept) {
+            console.log('    event.source is NOT allowed');
             return;
           }
-          var messageObject = event.data;
+          console.log('    event.source is allowed');
 
+          var messageObject = event.data;
+          console.log('    event.data: ' + event.data);
           if (typeof messageObject === 'string') {
             try {
               messageObject = JSON.parse(messageObject);
             } catch (e) {
+              console.log('        event.data could not be parsed');
+
               return;
             }
           }
 
           if (!messageObject || messageObject.from !== 'JFE' || messageObject.to !== 'SI') {
+            console.log('        event.data does not have correct sender/destination');
             return;
           }
+            console.log('        event.data is good');
 
           if (!QSI.screenCaptureHandlers) {
             QSI.screenCaptureHandlers = {};
@@ -2586,7 +2597,11 @@ if(QSI.util === undefined) {
           // let's the embedded target know that it is contained by an intercept that can handle
           // screen capture requests
           if (messageObject.event === 'canScreenCapture') {
+            console.log('    handling action: canScreenCapture');
+
             if (typeof QSI.screenCaptureModulePromise === 'undefined') {
+              console.log('    requesting screencapture module');
+
               QSI.screenCaptureModulePromise = QSI.AssetManager.promiseLoadScript('ScreenCapture', version);
             }
 
@@ -2596,10 +2611,17 @@ if(QSI.util === undefined) {
               to: 'JFE',
               canScreenCapture: true
             };
+            console.log('    sending reply postMessage for canScreenCapture');
+
             event.source.postMessage(JSON.stringify(canScreenCaptureMessage), event.origin);
+            console.log('    after sending reply postMessage for canScreenCapture');
+            console.log('======QSI END MESSAGE LISTENER in setupScreenCaptureListener========');
 
             return;
           }
+
+          console.log('    other kind of action');
+          console.log('======QSI END MESSAGE LISTENER in setupScreenCaptureListener========');
 
           if (typeof QSI.screenCaptureModulePromise !== 'undefined') {
             QSI.screenCaptureModulePromise.then(function() {
