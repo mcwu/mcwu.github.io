@@ -2635,7 +2635,7 @@ if(QSI.util === undefined) {
             console.log('    sending reply postMessage for canScreenCapture');
 
             event.source.postMessage(JSON.stringify(canScreenCaptureMessage), event.origin);
-            console.log('    after sending reply postMessage for canScreenCapture');
+            console.log('    after sending reply postMessage for canScreenCapture. time: ' + Date.now());
             console.log('======QSI END MESSAGE LISTENER in setupScreenCaptureListener========');
 
             return;
